@@ -19,7 +19,10 @@ def acceso():
 	db= request.forms.get("db")
 	basedatos = MySQLdb.connect(host=host, user=user, passwd=passwd, db=db)
 	cursor = basedatos.cursor()
-	tablas = cursor.execute("show tables;")
-	return template('acceso.tpl', db=db, tablas=tablas)
+	tablas = cursor.execute("show tables")
+	resultados = cursor.fetchall()
+	cursor.close()
+	numero_tablas=len(resultados)
+	return template('acceso.tpl', db=db, tablas=resultados, numero_tablas=numero_tablas)
 
 run(host='127.0.0.1', port=8080, debug=True)

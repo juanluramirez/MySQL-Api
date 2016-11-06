@@ -9,6 +9,7 @@
 <body>
 	<h1>Base de datos: {{db}}.</h1>
 	<h2>Tablas :</h2>
-	<h3>{{tablas}}</h3> 
+	<h3>{{tablas}}</h3>
+	<h3>Tiene un total de: {{numero_tablas}} tablas 
 </body>  
 </html>
