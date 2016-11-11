@@ -25,4 +25,4 @@ def acceso():
 	numero_tablas=len(resultados)
 	return template('acceso.tpl', db=db, tablas=resultados, numero_tablas=numero_tablas)
 
-run(host='127.0.0.1', port=8080, debug=True)
+run(host='127.0.0.1', port=8080)
